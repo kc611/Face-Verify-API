@@ -42,9 +42,9 @@ Using other version of these software may cause problems
  This Model uses an Inception Model to create embeddings from a 96x96 dimensional RGB image as its input.And henceforth, outputs a matrix that encodes each input face image into a 128-dimensional vector.<br>
  <img src="Resources/f_x.png" alt="Sample" style="width: 500px;"/>
  Then these encodings are used to compare two images as follows:
- 
+ <img src="Resources/distance_kiank.png" alt="Sample" style="width: 500px;"/>
  The cost function layer(distance in above image) uses Triplet Loss. A general equation of triplet loss is as follows
- 
+  <img src="Resources/triplet_loss.png" alt="Sample" style="width: 500px;"/>
  During Training triplets of images (A,P,N) are used namely:
     A is an "Anchor" image--a picture of a person.
     P is a "Positive" image--a picture of the same person as the Anchor image.
@@ -53,6 +53,7 @@ Using other version of these software may cause problems
  The triplet loss function tries to "push" the encodings of two images of the same person (Anchor and Positive) closer together, while "pulling" the encodings of two images of different persons (Anchor, Negative) further apart. Specifically minimize the l2 norm betwwen encoding vectors of (Anchor,Positive) and maximize the l2 norm between encoding vectors of (Anchor,Negative)
  
  The Model is trained by minimizing the triplet loss.Following are some examples of distances between the encodings between three individuals: 
+  <img src="Resources/distance_matrix.png" alt="Sample" style="width: 500px;"/>
 
 # API Structure Overview
   Give two input images, with the face verification api, the distance between to embedded images can be used to determine the identity of the input images. Below is the distance calculated for the sample input images.
