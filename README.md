@@ -1,27 +1,32 @@
 # Face Verification API
-
-  The aim of this framework is to detect and classify face from images. It is based on Computer Vision technology for Face Detection and Deep Learning for Face Verification. It Employs a Siamese Network with Triplet Loss function to perform the task of face verification. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
-    
+Face recognition problems commonly fall into two categories:
+ *Face Verification - "is this the claimed person?". For example, you can pass through by letting a system scan your passport and then verifying that you (the person carrying the passport) are the correct person. A mobile phone that unlocks using your face is also using face verification. This is a 1:1 matching problem.
+ *Face Recognition - "who is this person?". For example, the video lecture showed a face recognition video of Baidu employees entering the office without needing to otherwise identify themselves. This is a 1:K matching problem.
+  
+  The aim of this framework is to detect and verify face from images in database. It Employs a Siamese Network with Triplet Loss function(FaceNet Model) to perform the task of face verification. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
+    FaceNet learns a neural network that encodes a face image into a vector of 128 numbers. By comparing two such vectors, you can then determine if two pictures are of the same person.
+   
    This Entire Model is henceforth built and is rolled into an Django API for cross-platform accessiblity. 
 
 # Setup
 ##### For setting up this API in a local machine:-
 
-1.Install requirements (Run following command in CMD)
+1. Install requirements (Run following command in CMD)
 
 ```
 pip install -r requirements.txt
 ```
 
-2.Navigate to the base folder in CMD (Namely the folder containing manage.py of this webapp)
+2. Navigate to the base folder in CMD (Namely the folder containing manage.py of this webapp)
 
-3.Setup the API Migrations(run both commands)
+
+3. Setup the API Migrations(run both commands)
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-4.Run the app
+4. Run the app
 
 ```
 python manage.py runserver
@@ -29,32 +34,6 @@ python manage.py runserver
 
 Note: This entire framework was built and tested with Cuda 10.1(Nvidia) and cuDNN compatible with 10.1 for GPU support,
 Using other version of these software may cause problems
-
-# API URLs
-#### Person Class URLs:
-Following URLs Deal with CRUD Operations on Person object which could be viewed as the Users in this context. 
-     
-    list/ :- Lists all the Users currently registered in Database
-    create/ :- Register/Create a new User.
-    
-    update/<str:id> :- Update a currently Registered User.
-    delete/<str:id> :- Delete a currently Registered User
-
-#### Face Class URLS:
-Following URLs Deal with CRUD Operations on Face object,each of which is connected to the corresponding Person/User.
-    
-    image/listall/ :- Lists all Face images currently registered in the database.
-    image/create/ :- Create/Register a new Face image in the database.
-
-    image/listbyperson/<str:id> :- Lists all the Face images cossesponding to a single user.
-    image/update/<str:id> :- Update a specified Face image.
-    image/delete/<str:id> :- Delete a specified Face image.
-
-#### Verify Class URLS:
-    verify/linear :- Verifies a given image using the least distance(Linear Norm) w.r.t. vectors of embeddings of all images in database 
-
-#### Debug Paths for development purpose:
-    dev/embeddings/<str:id> :- Returns the embeddings of a given Face image registered in database.
 
 # Overview of ML Model
 
