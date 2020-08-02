@@ -1,0 +1,25 @@
+# API URLs
+#### Person Class URLs:
+Following URLs Deal with CRUD Operations on Person object which could be viewed as the Users in this context. 
+     
+    list/ :- Lists all the Users currently registered in Database
+    create/ :- Register/Create a new User.
+    
+    update/<str:id> :- Update a currently Registered User.
+    delete/<str:id> :- Delete a currently Registered User
+
+#### Face Class URLS:
+Following URLs Deal with CRUD Operations on Face object,each of which is connected to the corresponding Person/User.
+    
+    image/listall/ :- Lists all Face images currently registered in the database.
+    image/create/ :- Create/Register a new Face image in the database.
+
+    image/listbyperson/<str:id> :- Lists all the Face images cossesponding to a single user.
+    image/update/<str:id> :- Update a specified Face image.
+    image/delete/<str:id> :- Delete a specified Face image.
+
+#### Verify Class URLS:
+    verify/linear :- Verifies a given image using the least distance(Linear Norm) w.r.t. vectors of embeddings of all images in database 
+
+#### Debug Paths for development purpose:
+    dev/embeddings/<str:id> :- Returns the embeddings of a given Face image registered in database.
