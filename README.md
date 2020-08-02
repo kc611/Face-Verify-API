@@ -1,6 +1,8 @@
 # Face Verification API
 Face recognition problems commonly fall into two categories:
+
  *Face Verification - "is this the claimed person?". For example, you can pass through by letting a system scan your passport and then verifying that you (the person carrying the passport) are the correct person. A mobile phone that unlocks using your face is also using face verification. This is a 1:1 matching problem.
+ 
  *Face Recognition - "who is this person?". For example, the video lecture showed a face recognition video of Baidu employees entering the office without needing to otherwise identify themselves. This is a 1:K matching problem.
   
   The aim of this framework is to detect and verify face from images in database. It Employs a Siamese Network with Triplet Loss function(FaceNet Model) to perform the task of face verification. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
