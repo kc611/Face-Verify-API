@@ -2,7 +2,7 @@
 
   The aim of this framework is to detect and classify face from images. It is based on Computer Vision technology for Face Detection and Deep Learning for Face Verification. It Employs a Siamese Network with Triplet Loss function to perform the task of face verification. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
     
-    This Entire Model is henceforth built and is rolled into an Django API for cross-platform accessiblity. 
+   This Entire Model is henceforth built and is rolled into an Django API for cross-platform accessiblity. 
 
 # Setup
 ##### For setting up this API in a local machine:-
@@ -33,6 +33,7 @@ Using other version of these software may cause problems
 # API URLs
 #### Person Class URLs:
 Following URLs Deal with CRUD Operations on Person object which could be viewed as the Users in this context. 
+     
     list/ :- Lists all the Users currently registered in Database
     create/ :- Register/Create a new User.
     
@@ -41,6 +42,7 @@ Following URLs Deal with CRUD Operations on Person object which could be viewed 
 
 #### Face Class URLS:
 Following URLs Deal with CRUD Operations on Face object,each of which is connected to the corresponding Person/User.
+    
     image/listall/ :- Lists all Face images currently registered in the database.
     image/create/ :- Create/Register a new Face image in the database.
 
