@@ -6,7 +6,7 @@ urlpatterns = [
     path('help/' , views.api_overview , name = "api-overview"),
 
 # Person Class URLS:
-    path('person/list/' , views.person.list_all , name = "user-list"),
+    path('person/listall/' , views.person.list_all , name = "user-list"),
     path('person/create/' , views.person.create_person , name = "user-create"),
 
     path('person/update/<str:id>' , views.person.update_person , name = "user-update"),
