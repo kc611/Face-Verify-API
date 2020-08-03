@@ -5,8 +5,9 @@ Face recognition problems commonly fall into two categories:
  
  * Face Recognition :- "who is this person?". For example, employees entering the office without needing to otherwise identify themselves. This is a 1:K matching problem.
   
-  The aim of this framework is to detect and recognize face from images in database. It Employs a Siamese Network with Triplet Loss function(FaceNet Model) to perform the task of face recognition. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
-    FaceNet learns a neural network that encodes a face image into a vector of 128 numbers. By comparing two such vectors, you can then determine if two pictures are of the same person.
+  The aim of this framework is to detect and recognize face from images in database. It Employs a Siamese Network with Triplet Loss function([FaceNet Model](https://arxiv.org/abs/1503.03832)) to perform the task of face recognition. Frontal Face Detection and cropping of image is done with help of [OpenCV Haar Feature-based Cascade Classifiers](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html). 
+   
+   FaceNet learns a neural network that encodes a face image into a vector of 128 numbers. By comparing two such vectors, you can then determine if two pictures are of the same person.
    
    This Entire Model is henceforth built and is rolled into an Django API for cross-platform accessiblity. 
 
@@ -37,6 +38,44 @@ python manage.py runserver
 Note: This entire framework was built and tested with Cuda 10.1(Nvidia) and cuDNN compatible with 10.1 for GPU support,
 Using other version of these software may cause problems
 
+# API Structure Overview
+```
+   BASE URL
+   |
+   |-- /admin
+   |
+   |-- /api
+       |
+       |-- /person
+       |   |
+       |   |-- /listall
+       |   |-- /create
+       |   |-- /update/<str:id>
+       |   |-- /delete/<str:id>
+       |
+       |-- /face
+       |   |
+       |   |-- /listall
+       |   |-- /create
+       |   |-- /listbyperson/<str:id>
+       |   |-- /update/<str:id>
+       |   |-- /delete/<str:id>
+       |
+       |-- /verify
+       |   |
+       |   |-- /linear
+       |   
+       |-- /dev
+       |   |
+       |   |-- /embeddings/<str:id>
+       |
+       |-- /help/<str:url>
+```
+
+If hosted on local machine Base URL would be similar to http: //localhost:xxxx
+
+For additional information on any of these urls pass those urls to /help with a get request in form of '/help/api/.......'.This will return a Json Response containing the information on that URLs working.
+
 # Overview of ML Model
  
  This Model uses an Inception Model to create embeddings from a 96x96 dimensional RGB image as its input.And henceforth, outputs a matrix that encodes each input face image into a 128-dimensional vector.<br>
@@ -53,11 +92,10 @@ Using other version of these software may cause problems
  The triplet loss function tries to "push" the encodings of two images of the same person (Anchor and Positive) closer together, while "pulling" the encodings of two images of different persons (Anchor, Negative) further apart. Specifically minimize the l2 norm betwwen encoding vectors of (Anchor,Positive) and maximize the l2 norm between encoding vectors of (Anchor,Negative)
  
  The Model is trained by minimizing the triplet loss.Following are some examples of distances between the encodings between three individuals: 
+ 
   <img src="Resources/distance_matrix.png" alt="Sample" style="width: 500px;"/>
 
-# API Structure Overview
-  Give two input images, with the face verification api, the distance between to embedded images can be used to determine the identity of the input images. Below is the distance calculated for the sample input images.
-  
+
 # Tasks
 #### General Model Stucture
 + [ ] Face Detection(Not yet Implemented)
