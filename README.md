@@ -12,12 +12,12 @@ Face recognition problems commonly fall into two categories:
    This Entire Model is henceforth built and is rolled into an Django API for cross-platform accessiblity. 
 
 # Setup
-##### For setting up this API in a local machine:-
+#### For setting up this API in a local machine:-
 
 1. Install requirements (Run following command in CMD)
 
 ```
-pip install -r requirements.txt
+   pip install -r requirements.txt
 ```
 
 2. Navigate to the base folder in CMD (Namely the folder containing manage.py of this webapp)
@@ -26,17 +26,17 @@ pip install -r requirements.txt
 3. Setup the API Migrations(run both commands)
 
 ```
-python manage.py makemigrations
-python manage.py migrate
+   python manage.py makemigrations
+   python manage.py migrate
 ```
 4. Run the app
 
 ```
-python manage.py runserver
+   python manage.py runserver
 ```
 
 Note: This entire framework was built and tested with Cuda 10.1(Nvidia) and cuDNN compatible with 10.1 for GPU support,
-Using other version of these software may cause problems
+Using other version of these software in hosting environment may cause problems.
 
 # API Structure Overview
 ```
@@ -72,9 +72,9 @@ Using other version of these software may cause problems
        |-- /help/<str:url>
 ```
 
-If hosted on local machine Base URL would be similar to http: //localhost:xxxx
+If hosted on local machine base URL would be similar to http: //localhost:xxxx.
 
-For additional information on any of these urls pass those urls to /help with a get request in form of '/help/api/.......'.This will return a Json Response containing the information on that URLs working.
+For additional information on any of these urls pass those urls to /help with a get request in form of '/help/api/.......'. This will return a JSON Response containing the information on that URLs working.
 
 # Overview of ML Model
  
