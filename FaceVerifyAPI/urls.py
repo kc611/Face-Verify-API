@@ -6,11 +6,11 @@ urlpatterns = [
     path('help/' , views.api_overview , name = "api-overview"),
 
 # Person Class URLS:
-    path('list/' , views.person.list_all , name = "user-list"),
-    path('create/' , views.person.create_person , name = "user-create"),
+    path('person/list/' , views.person.list_all , name = "user-list"),
+    path('person/create/' , views.person.create_person , name = "user-create"),
 
-    path('update/<str:id>' , views.person.update_person , name = "user-update"),
-    path('delete/<str:id>' , views.person.delete_person , name = "user-delete"),
+    path('person/update/<str:id>' , views.person.update_person , name = "user-update"),
+    path('person/delete/<str:id>' , views.person.delete_person , name = "user-delete"),
 
 # Face Class URLS:
     path('image/listall/' , views.face.list_all , name = "image-list"),
