@@ -99,7 +99,11 @@ class verify_image():
         
         min_dist,face_id = verify_image_class.return_distance(curr_embeds)
 
-        return Response("Min Dist is "+str(min_dist)+" from "+str(face_id))
+        curr_person = Person.objects.get(id = face_id)
+
+        serializer = PersonSerializer(curr_person)
+
+        return Response("Min Dist is "+str(min_dist)+" from "+str(serializer.data['name']))
 
 class dev():
     @api_view(['GET'])
