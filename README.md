@@ -1,4 +1,7 @@
 # Face Verification API
+  This is a Django API(Built with Django REST Framework) that stores and verifies faces of the users. Can be used as backend APi for aany Website or App accordingly. [Let's See How It Works](https://github.com/kc611/Face-Verify-API/blob/master/Interactive%20Demo.ipynb)
+
+# Problem Statement
 Face recognition problems commonly fall into two categories:
 
  * Face Verification :- "is this the claimed person?". For example, you can pass through by letting a system scan your passport and then verifying that you (the person carrying the passport) are the correct person. A mobile phone that unlocks using your face is also using face verification. This is a 1:1 matching problem.
@@ -104,7 +107,7 @@ For additional information on any of these urls pass those urls to /help with a 
 + [x] Face Verification
     - [x] Base CNN model building and training
     - [x] Face verification metric measure
-+ [ ] Interactive Demo
++ [x] Interactive Demo
 + [x] API
 
 #### API Features
