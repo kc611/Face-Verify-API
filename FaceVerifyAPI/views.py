@@ -75,7 +75,7 @@ class face():
         serializer = FaceSerializer(data = request.data)
         serializer.is_valid(raise_exception=True )
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response("Face Registered Sucessfully", status=status.HTTP_201_CREATED)
     
     @api_view(['POST'])
     def update_image(request,id):
