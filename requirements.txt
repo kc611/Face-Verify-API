@@ -1,5 +1,5 @@
 tensorflow==2.1.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 Django==3.2.0
 Keras==2.2.5
 Keras-Applications==1.0.8
