@@ -1,6 +1,6 @@
 tensorflow==2.1.0
 djangorestframework==3.11.0
-Django==3.2.0
+Django==3.2.1
 Keras==2.2.5
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
