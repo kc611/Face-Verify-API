@@ -99,21 +99,6 @@ For additional information on any of these urls pass those urls to /help with a 
   <img src="Resources/distance_matrix.png" alt="Sample" style="width: 500px;"/>
 
 
-# Tasks
-#### General Model Stucture
-+ [ ] Face Detection(Not yet Implemented)
-    - [ ] Haar Cascade Classifier
-+ [ ] Face Alignment
-+ [x] Face Verification
-    - [x] Base CNN model building and training
-    - [x] Face verification metric measure
-+ [x] Interactive Demo
-+ [x] API
-
-#### API Features
-+ [x] Linear Verify
-+ [ ] K-NN Verify
-
 ## Useful Links:
 * [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832)
 * [OpenCV: HaarCascades for Frontal Face Detection](https://docs.opencv.org/3.3.0/d7/d8b/tutorial_py_face_detection.html)
