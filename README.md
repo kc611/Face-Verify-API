@@ -1,5 +1,5 @@
 # Face Verification API
-  This is a Django API(Built with Django REST Framework) that stores and verifies faces of the users. Can be used as backend APi for aany Website or App accordingly. [Let's See How It Works](https://github.com/kc611/Face-Verify-API/blob/master/Interactive%20Demo.ipynb)
+  This is a Django API(Built with Django REST Framework) that stores and verifies faces of the users. Can be used as backend API for any Website or App accordingly. [Let's See How It Works](https://github.com/kc611/Face-Verify-API/blob/master/Interactive%20Demo.ipynb)
 
 # Problem Statement
 Face recognition problems commonly fall into two categories:
